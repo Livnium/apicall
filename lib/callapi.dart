@@ -1,4 +1,4 @@
-library apicall;
+library callapi;
 
 export 'src/call.dart';
 export 'src/exception.dart';

@@ -1,9 +1,9 @@
 /// Represents an exception that occurred during an API call.
-class ApiCallException implements Exception {
+class CallApiException implements Exception {
   final String message;
 
-  ApiCallException(this.message);
+  CallApiException(this.message);
 
   @override
-  String toString() => 'ApiCallException: $message';
+  String toString() => 'CallApiException: $message';
 }

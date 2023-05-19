@@ -1,11 +1,11 @@
-name: apicall
+name: callapi
 description: >
   A Dart package that provides an easy-to-use and efficient way to make HTTP requests to an API.
   It supports GET, POST, PUT, PATCH, and DELETE methods, parses JSON responses into custom data types,
   and includes robust error handling functionality. Designed with singleton pattern for resource efficiency.
 
 version: 1.0.0
-repository: https://github.com/chetanxpatil/apicall
+repository: https://github.com/chetanxpatil/CallApi
 homepage: https://livnium.com
 
 environment:

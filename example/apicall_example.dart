@@ -1,10 +1,10 @@
 import 'dart:convert';
 
-import 'package:apicall/apicall.dart';
+import 'package:callapi/callapi.dart';
 
 void main() async {
   // Create an ApiCall instance for a specific base URL
-  ApiCall apiCall = ApiCall(baseUrl: 'https://jsonplaceholder.typicode.com/');
+  CallApi apiCall = CallApi(baseUrl: 'https://jsonplaceholder.typicode.com/');
 
   // Define a function to parse a JSON string into a Map
   Map<String, dynamic> jsonParser(String jsonString) {

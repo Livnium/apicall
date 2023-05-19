@@ -2,36 +2,36 @@ import 'dart:convert';
 import 'dart:developer';
 import 'package:http/http.dart' as http;
 
-import '../apicall.dart';
+import '../callapi.dart';
 
 /// Provides methods to perform HTTP requests to an API and handle responses.
 ///
-/// The ApiCall class is implemented as a singleton, meaning that only one instance
+/// The CallApi class is implemented as a singleton, meaning that only one instance
 /// of the class can exist for a specific base URL. This is useful when you want to
 /// make multiple API calls to the same base URL, as it allows you to reuse the same
-/// ApiCall instance.
-class ApiCall {
+/// CallApi instance.
+class CallApi {
   /// The base URL of the API.
   final String baseUrl;
 
-  /// A private constructor that initializes the base URL of the ApiCall instance.
+  /// A private constructor that initializes the base URL of the CallApi instance.
   ///
-  /// This constructor is private to prevent direct instantiation of the ApiCall class.
-  /// Instead, the ApiCall class should be instantiated through the factory constructor.
-  ApiCall._privateConstructor(this.baseUrl);
+  /// This constructor is private to prevent direct instantiation of the CallApi class.
+  /// Instead, the CallApi class should be instantiated through the factory constructor.
+  CallApi._privateConstructor(this.baseUrl);
 
-  /// A map that holds the instances of ApiCall that have already been created.
+  /// A map that holds the instances of CallApi that have already been created.
   ///
-  /// The keys are the base URLs and the values are the corresponding ApiCall instances.
-  static final Map<String, ApiCall> _instances = <String, ApiCall>{};
+  /// The keys are the base URLs and the values are the corresponding CallApi instances.
+  static final Map<String, CallApi> _instances = <String, CallApi>{};
 
-  /// A factory constructor that creates a new instance of ApiCall or returns an existing one.
+  /// A factory constructor that creates a new instance of CallApi or returns an existing one.
   ///
-  /// If an instance of ApiCall for the specified base URL already exists, this constructor
+  /// If an instance of CallApi for the specified base URL already exists, this constructor
   /// returns that instance. Otherwise, it creates a new instance and adds it to the _instances map.
-  factory ApiCall({required String baseUrl}) {
+  factory CallApi({required String baseUrl}) {
     return _instances.putIfAbsent(
-        baseUrl, () => ApiCall._privateConstructor(baseUrl));
+        baseUrl, () => CallApi._privateConstructor(baseUrl));
   }
 
   /// Performs an HTTP request to the API and returns the response.
@@ -76,8 +76,8 @@ class ApiCall {
           break;
       }
     } catch (e) {
-      log('Error making API call: $e', name: 'ApiCall');
-      throw ApiCallException('Error making API call: $e');
+      log('Error making API call: $e', name: 'CallApi');
+      throw CallApiException('Error making API call: $e');
     }
 
     return _handleResponse<T>(response, jsonParser);
@@ -89,14 +89,14 @@ class ApiCall {
   /// [jsonParser] is a function that takes a JSON string and returns an object of type T.
   /// If provided, this function will be used to parse the JSON response from the server.
   T _handleResponse<T>(http.Response response, T Function(String)? jsonParser) {
-    log('API response: ${response.body}', name: 'ApiCall');
+    log('API response: ${response.body}', name: 'CallApi');
 
     if (response.statusCode >= 200 && response.statusCode < 300) {
       return jsonParser != null
           ? jsonParser(response.body)
           : response.body as T;
     } else {
-      throw ApiCallException(
+      throw CallApiException(
           'Request failed with status code ${response.statusCode}');
     }
   }
