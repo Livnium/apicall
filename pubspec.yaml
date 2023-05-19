@@ -1,0 +1,19 @@
+name: apicall
+description: >
+  A Dart package that provides an easy-to-use and efficient way to make HTTP requests to an API.
+  It supports GET, POST, PUT, PATCH, and DELETE methods, parses JSON responses into custom data types,
+  and includes robust error handling functionality. Designed with singleton pattern for resource efficiency.
+
+version: 1.0.0
+# repository: https://github.com/my_org/my_repo
+
+environment:
+  sdk: ^3.0.0
+
+# Add regular dependencies here.
+dependencies:
+  http: ^0.13.6
+
+dev_dependencies:
+  lints: ^2.1.0
+  test: ^1.24.3
