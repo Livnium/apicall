@@ -17,7 +17,7 @@ First, add the `api_call` package to your pubspec dependencies.
 To import `api_call`, add the following line to your Dart code:
 
 ```dart
-import 'package:api_call/api_call.dart';
+import 'package:api_call/call.dart';
 ```
 
 ## Usage

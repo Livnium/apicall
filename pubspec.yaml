@@ -5,12 +5,13 @@ description: >
   and includes robust error handling functionality. Designed with singleton pattern for resource efficiency.
 
 version: 1.0.0
-# repository: https://github.com/my_org/my_repo
+repository: https://github.com/chetanxpatil/apicall
+homepage: https://livnium.com
 
 environment:
   sdk: ^3.0.0
 
-# Add regular dependencies here.
+
 dependencies:
   http: ^0.13.6
 

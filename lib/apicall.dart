@@ -1,3 +1,5 @@
 library apicall;
 
-export 'src/api_call.dart';
+export 'src/call.dart';
+export 'src/exception.dart';
+export 'src/methods.dart';

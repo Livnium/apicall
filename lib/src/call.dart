@@ -1,10 +1,8 @@
 import 'dart:convert';
 import 'dart:developer';
 import 'package:http/http.dart' as http;
-import 'api_call_exception.dart';
 
-/// Enumerates the HTTP methods that can be used in an API call.
-enum HttpMethod { get, post, put, patch, delete }
+import '../apicall.dart';
 
 /// Provides methods to perform HTTP requests to an API and handle responses.
 ///
@@ -53,8 +51,7 @@ class ApiCall {
     Map<String, String>? queryParameters,
     T Function(String)? jsonParser,
   }) async {
-    final String url =
-        this.baseUrl + path + _encodeQueryParameters(queryParameters);
+    final String url = baseUrl + path + _encodeQueryParameters(queryParameters);
 
     http.Response response;
     try {
