@@ -4,8 +4,8 @@ description: >
   It supports GET, POST, PUT, PATCH, and DELETE methods, parses JSON responses into custom data types,
   and includes robust error handling functionality. Designed with singleton pattern for resource efficiency.
 
-version: 1.0.0
-repository: https://github.com/chetanxpatil/CallApi
+version: 1.0.1
+repository: https://github.com/chetanxpatil/apicall
 homepage: https://livnium.com
 
 environment:

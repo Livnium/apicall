@@ -12,9 +12,9 @@ A Dart package for making HTTP requests to an API and handling the responses. It
 
 ## Getting Started
 
-First, add the `call_api` package to your pubspec dependencies.
+First, add the `callapi` package to your pubspec dependencies.
 
-To import `call_api`, add the following line to your Dart code:
+To import `callapi`, add the following line to your Dart code:
 
 ```dart
 import 'package:callapi/callapi.dart';
@@ -22,7 +22,7 @@ import 'package:callapi/callapi.dart';
 
 ## Usage
 
-Here's a simple example of how to use the `call_api` package:
+Here's a simple example of how to use the `callapi` package:
 
 ```dart
 void main() async {
